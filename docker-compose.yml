@@ -4,12 +4,5 @@ services:
     build: ./drupal7
     ports: 
       - 8001:80
-    depends_on: 
-      - mariadb
-  mariadb:
-    image: mariadb:latest
-    environment:
-      - MYSQL_ROOT_PASSWORD=root-password
-      - MYSQL_DATABASE=drupal
-      - MYSQL_USER=drupal
-      - MYSQL_PASSWORD=drupal
+    volumes:
+      - $PWD/files:/var/www/html/sites/default/files
