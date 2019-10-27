@@ -1,8 +1,7 @@
-# docker-compose: Drupal 7 + H5P with development mount
+# Drupal 7 + H5P Docker image for development purposes
 
-1. ```mkdir files``` (this is where Drupal will store data related to H5P)
-2. ```sudo chmod 777 files``` to allow the www-data user inside the container to access to local folder
-3. ```docker-compose build``` to fetch latest Drupal 7 and Drush
-4. ```docker-compose up``` to start container.
-5. Access Drupal at http://localhost:8001 (Username: admin, Password: admin)
-6. Use the files in the ```files/h5p``` folder to develop for H5P.
+This Docker image is based on the regular Drupal 7 image. It differs in these respects:
+
+1. It allows you to mount volumes into /var/www/html/sites/default/files, which is the location where H5P stores its data.
+2. The installation of the default is already done (uses SQLite as database).
+3. H5P is already installed.

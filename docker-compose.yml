@@ -1,8 +1,0 @@
-version: "3.6"
-services:
-  drupal:
-    build: ./drupal7
-    ports: 
-      - 8001:80
-    volumes:
-      - $PWD/files:/var/www/html/sites/default/files
